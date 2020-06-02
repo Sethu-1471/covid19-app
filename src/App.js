@@ -21,11 +21,7 @@ function App() {
     setCountry(changedCountry);
     const apidata = await fetchData(changedCountry);
     updatedData(apidata);
-    console.log("mine");
-    console.log(changedCountry);
-    console.log(data);
-    console.log("mine");
-    
+    setCountry(changedCountry); 
   }
 
   return (
@@ -33,7 +29,7 @@ function App() {
       <img src={covid19} alt="Covid19" className={styles.image}></img>
       <Cards data={data} />
       <CountryPicker handleCountryChange={handleCountryChange} />
-      <Charts />
+      <Charts data={data} country={country} />
     </div>
   );
 }
